@@ -1,0 +1,292 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header {
+  position: sticky;   /* ← スクロールしても上に固定される */
+  top: 0;             /* ← 固定位置（画面上部） */
+  z-index: 50;        /* ← ほかの要素より前に出す */
+  background: #111827cc;  /* ← 半透明の背景（かっこよくなる） */
+  backdrop-filter: blur(6px); /* ← 後ろをぼかす(超アプリっぽくなる) */
+  border-bottom: 1px solid #1f2937;
+}
+
+
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 12px 16px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+  min-height: calc(100vh - 120px);
+}
+
+.footer {
+  text-align: center;
+  padding: 12px 8px;
+  font-size: 12px;
+  color: #9ca3af;
+  border-top: 1px solid #1f2937;
+}
+
+.container {
+  margin-top: 12px;
+}
+
+.search-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #4b5563;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.search-bar button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+}
+
+.search-bar button:hover {
+  background: #1d4ed8;
+}
+
+.error {
+  color: #f97373;
+}
+
+.anime-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.anime-card {
+  background: #020617;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #1f2937;
+  display: flex;
+  flex-direction: column;
+}
+
+.anime-card-thumb img {
+  width: 100%;
+  display: block;
+}
+
+.anime-card-body {
+  padding: 8px 10px 12px;
+}
+
+.anime-card-body h3 {
+  font-size: 15px;
+  margin: 0 0 4px;
+}
+
+.anime-meta {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 0 0 6px;
+}
+
+.anime-card-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.anime-card-actions button {
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: 1px solid #4b5563;
+  background: #020617;
+  color: #e5e7eb;
+  cursor: pointer;
+}
+
+.anime-card-actions button:hover {
+  background: #111827;
+}
+
+.detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.detail-cover {
+  width: 220px;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.detail-main {
+  flex: 1;
+  min-width: 240px;
+}
+
+.detail-main h1 {
+  margin-top: 0;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.detail-actions button,
+.detail-actions a {
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 8px;
+  border: 1px solid #4b5563;
+  background: #020617;
+  color: #e5e7eb;
+  cursor: pointer;
+}
+
+.detail-actions a {
+  text-decoration: none;
+}
+
+.detail-actions button:hover,
+.detail-actions a:hover {
+  background: #111827;
+}
+
+.description {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #020617;
+  border: 1px solid #1f2937;
+}
+
+.description h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 640px) {
+  .main {
+    padding: 12px;
+  }
+
+  .detail {
+    flex-direction: column;
+  }
+
+  .detail-cover {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+/* キャラクター一覧 */
+.char-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.char-card {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+}
+
+.char-img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.va-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.va-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+.va-name {
+  font-size: 12px;
+  color: #cbd5e1;
+}
+
+@media (max-width: 480px) {
+  .search-bar input {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .search-bar button {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+}
+
+.anime-card {
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
+.anime-card:active {
+  transform: scale(0.96);
+  opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+  .anime-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .char-list {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
